@@ -5,6 +5,5 @@ resultado=calcular_area_triangulo(10,5)
 print(f"El área del triángulo es: {resultado}")
 
 def saludar_persona(nombre,edad):
-    print(f"Hola {nombre},tienes {edad} años.")
+    print(f"Hola {nomnre}, tines {edad} años")
 saludar_persona("Elena",28)    
-    
