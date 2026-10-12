@@ -1,5 +1,5 @@
 # Crear un array (lista) de frutas
-frutas = ["manzana", "pera", "uva"]
+frutas = ["manzana", "pera", "uva","banana"]
 
 # Acceder al primer elemento
 print(frutas[0])  # Muestra: manzana
@@ -11,3 +11,6 @@ print(frutas)     # Muestra: ['manzana', 'naraja', 'uva']
 # Agregar un elemento al final
 frutas.append("sandía")
 print(len(frutas)) # Muestra la cantidad de elementos: 4
+
+frutas.remove("banana")
+print(frutas)
