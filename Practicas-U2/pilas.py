@@ -1,10 +1,11 @@
+#el ultimo en entrar es el primero en salir
 # Paso 1: Crear la estructura
 # Constructor
 pila = []
 
 # Paso 2: Apilar 10 elementos (Push)
 for i in range(1, 11):
-    pila.append(f"Plato {i}")
+    pila.append(f"Plato {i}")     #append()=agrega al final
 
 print("Pila inicial:", pila)
 
@@ -13,7 +14,7 @@ print("Plato en la cima:", pila[-1])
 
 # Paso 4: Desapilar 4 elementos (Pop)
 for i in range(4):
-    eliminado = pila.pop()
+    eliminado = pila.pop()   #pila.pop()=elimina y devuelve el ultimo elemento
     print("Plato retirado:", eliminado)
 
 print("Pila después de retirar 4 platos:", pila)

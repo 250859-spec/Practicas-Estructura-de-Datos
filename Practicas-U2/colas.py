@@ -1,31 +1,30 @@
+#el primero en entrar es el primero en salir
+# Paso 1: Importar los módulos necesarios-crear cola y retirar elementos del principio
 from collections import deque
+import time              #simular el tiempo
 
-# Paso 1: Crear la estructura (Constructor)
-cola = deque()
+# Paso 2: Inicializar la cola
+cola_turnos = deque()   #deque=permite retirara al primer cliente
 
-# Paso 2: Encolar 10 elementos (Enqueue)
-for i in range(1, 11):
-    cola.append(i)
+# Paso 3: Registrar turnos (Encolar - FIFO)
+cola_turnos.append("Cliente 1")
+cola_turnos.append("Cliente 2")
+cola_turnos.append("Cliente 3")
+cola_turnos.append("Cliente 4")
+cola_turnos.append("Cliente 5")
 
-print("Cola inicial:", list(cola))
+# Mostrar los turnos emitidos
+print("Turnos emitidos:", list(cola_turnos))
 
-# Paso 3: Consultar el primer elemento (Front / Peek)
-print("Primer elemento de la cola:", cola[0])
+# Paso 4: Procesar la atención (Desencolar)
+while len(cola_turnos) > 0:
+    cliente = cola_turnos.popleft()   #popleft=elimina el elemneto que esta al principio
 
-# Paso 4: Desencolar 4 elementos (Dequeue)
-for i in range(4):
-    elemento = cola.popleft()
-    print("Elemento eliminado:", elemento)
+    print("\nAtendiendo al:", cliente)
 
-print("Cola después de desencolar:", list(cola))
+    time.sleep(1)
 
-# Paso 5: Consultar tamaño y estado vacío (Size y Empty)
-print("Cantidad de elementos:", len(cola))
-print("¿La cola está vacía?:", len(cola) == 0)
+    print("Atención finalizada:", cliente)
+    print("Clientes restantes en la fila:", len(cola_turnos))
 
-# Paso 6: Vaciar la cola por completo (Extra)
-while len(cola) > 0:
-    print("Vaciando cola, se elimina:", cola.popleft())
-
-print("Cola final:", list(cola))
-print("¿La cola está vacía?:", len(cola) == 0)
+print("\nNo hay más clientes. La fila está vacía.")
